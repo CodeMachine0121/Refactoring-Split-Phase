@@ -5,16 +5,17 @@ namespace Refactoring_Split_Phase.Services;
 
 public class PriceOrder
 {
-    public decimal GetPrice(Weapon weapon, double discount, Materials materials)
+    public decimal GetPrice(Weapon weapon, decimal discount, Materials materials)
     {
         var commodityDto = new CommodityDto
         {
             Weapon = weapon,
             Materials = materials,
+            Discount = discount
         };
         var basePrice = commodityDto.SetPriceByCommodity(100m);
 
-        basePrice -= basePrice * (decimal)discount;
+        basePrice -= basePrice * commodityDto.Discount;
         return basePrice;
     }
 }
@@ -23,6 +24,7 @@ public class CommodityDto
 {
     public Weapon Weapon { get; set; }
     public Materials Materials { get; set; }
+    public decimal Discount { get; set; }
 
     public decimal SetPriceByCommodity(decimal totalPrice)
     {

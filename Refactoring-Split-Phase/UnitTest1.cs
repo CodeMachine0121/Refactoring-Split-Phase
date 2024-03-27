@@ -15,7 +15,7 @@ public class Tests
     public void should_get_right_price()
     {
         var priceOrder = new PriceOrder();
-        var price = priceOrder.GetPrice(Weapon.Sword, 0.05, new Materials()
+        var price = priceOrder.GetPrice(Weapon.Sword, 0.05m, new Materials()
         {
             Material = "Wood",
             Quality = Quality.Good
