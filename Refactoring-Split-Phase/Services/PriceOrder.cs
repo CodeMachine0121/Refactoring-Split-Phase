@@ -15,13 +15,8 @@ public class PriceOrder
         };
         var basePrice = commodityDto.SetPriceByCommodity(100m);
 
-        basePrice = SetDiscountPrice(basePrice, commodityDto);
+        basePrice = commodityDto.SetDiscountPrice(basePrice);
         return basePrice;
-    }
-
-    private static decimal SetDiscountPrice(decimal basePrice, CommodityDto commodityDto)
-    {
-        return basePrice - basePrice * commodityDto.Discount;
     }
 }
 
@@ -48,5 +43,10 @@ public class CommodityDto
         }
 
         return totalPrice;
+    }
+
+    public decimal SetDiscountPrice(decimal basePrice)
+    {
+        return basePrice - basePrice * Discount;
     }
 }
