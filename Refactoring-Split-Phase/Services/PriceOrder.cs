@@ -8,14 +8,7 @@ public class PriceOrder
     public decimal GetPrice(Weapon weapon, double discount, Materials materials)
     {
         var basePrice = 100m;
-        basePrice = SetPriceByCommodity(weapon, materials, basePrice);
-
-        basePrice -= basePrice * (decimal)discount;
-        return basePrice;
-    }
-
-    private static decimal SetPriceByCommodity(Weapon weapon, Materials materials, decimal totalPrice)
-    {
+        decimal totalPrice = basePrice;
         if (weapon == Weapon.Sword)
         {
             totalPrice += 30;
@@ -30,6 +23,9 @@ public class PriceOrder
             }
         }
 
-        return totalPrice;
+        basePrice = totalPrice;
+
+        basePrice -= basePrice * (decimal)discount;
+        return basePrice;
     }
 }
