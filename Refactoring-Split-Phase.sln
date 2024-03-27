@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refactoring-Split-Phase", "Refactoring-Split-Phase\Refactoring-Split-Phase.csproj", "{00CFAB3F-C4A1-4B8F-96C3-3F25FC0C6761}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00CFAB3F-C4A1-4B8F-96C3-3F25FC0C6761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CFAB3F-C4A1-4B8F-96C3-3F25FC0C6761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CFAB3F-C4A1-4B8F-96C3-3F25FC0C6761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CFAB3F-C4A1-4B8F-96C3-3F25FC0C6761}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
