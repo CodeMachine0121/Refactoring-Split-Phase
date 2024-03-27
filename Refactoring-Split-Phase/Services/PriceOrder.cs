@@ -8,24 +8,39 @@ public class PriceOrder
     public decimal GetPrice(Weapon weapon, double discount, Materials materials)
     {
         var basePrice = 100m;
-        decimal totalPrice = basePrice;
-        if (weapon == Weapon.Sword)
+        basePrice = SetPriceByCommodity(new CommodityDto
+        {
+            Weapon = weapon,
+            Materials = materials,
+        }, basePrice);
+
+        basePrice -= basePrice * (decimal)discount;
+        return basePrice;
+    }
+
+    private static decimal SetPriceByCommodity(CommodityDto dto,
+        decimal totalPrice)
+    {
+        if (dto.Weapon == Weapon.Sword)
         {
             totalPrice += 30;
         }
 
-        if (materials.Material == "Wood")
+        if (dto.Materials.Material == "Wood")
         {
             totalPrice += 20;
-            if (materials.Quality == Quality.Good)
+            if (dto.Materials.Quality == Quality.Good)
             {
                 totalPrice += totalPrice * 0.1m;
             }
         }
 
-        basePrice = totalPrice;
-
-        basePrice -= basePrice * (decimal)discount;
-        return basePrice;
+        return totalPrice;
     }
+}
+
+public class CommodityDto
+{
+    public Weapon Weapon { get; set; }
+    public Materials Materials { get; set; }
 }
