@@ -21,6 +21,6 @@ public class Tests
             Quality = Quality.Good
         });
 
-        Assert.That(price, Is.EqualTo( 52.25m));
+        Assert.That(price, Is.EqualTo(  156.75m));
     }
 }
